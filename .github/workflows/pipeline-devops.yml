@@ -25,3 +25,9 @@ jobs:
 
       - name: Run Pylint with minimum score 9
         run: pylint **/*.py --fail-under=9
+
+      - name: Install Semgrep
+        run: pip install semgrep
+
+      - name: Scan keamanan dengan Semgrep
+        run: semgrep scan --config auto --error app.py
